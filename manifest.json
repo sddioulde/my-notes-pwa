@@ -1,0 +1,21 @@
+{
+  "short_name": "My Notes",
+  "name": "My Notes",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#d6c232",
+  "theme_color": "#d6c232",
+  "icons": [
+    {
+      "src": "/images/notes-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/images/notes-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
