@@ -13,6 +13,20 @@
   display: inline-block;
 }
 
+#add-note-button{
+  position: absolute;;
+  bottom: 5px;
+  right: 5px;
+}
+
+#add-note-textarea{
+  background: #ffff88;
+  border: none;
+  margin: 0;
+  height: 100px;
+  width: 90%;
+}
+
 #install-button {
   visibility: hidden;
 }

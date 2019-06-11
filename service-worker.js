@@ -9,8 +9,7 @@ const CACHED_FILES = [
   '/scripts/app.js',
   '/scripts/install.js',
   '/images/notes-128.png',
-  '/images/notes-512.png',
-  // '/offline.html',
+  '/images/notes-512.png'
 ];
 
 self.addEventListener('install', () => {
@@ -51,12 +50,16 @@ self.addEventListener('fetch', (event) => {
         .then(cache =>
           fetch(event.request)
             .then(response => {
+              console.log('GETTING NOTES FROM NETWORK', response);
               if (response.status === 200) {
                 cache.put(requestUrl, response.clone());
               }
               return response;
             })
-            .catch(() => cache.match(requestUrl))
+            .catch(() => {
+              console.log('GETTING NOTES FROM CACHE');
+              return cache.match(requestUrl);
+            })
         )
     );
     return;

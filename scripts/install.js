@@ -9,9 +9,9 @@ const installPWA = (event) => {
   installPrompt.userChoice
     .then(choice => {
       if (choice.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt', choice);
+        console.log('installing app...', choice);
       } else {
-        console.log('User dismissed the A2HS prompt', choice);
+        console.log('NOT installing app...', choice);
       }
       installPrompt = null;
     });
@@ -20,7 +20,6 @@ const installPWA = (event) => {
 installButton.addEventListener('click', installPWA);
 
 window.addEventListener('beforeinstallprompt', event => {
-  console.log('PROMTING BEFORE INSTALL', installButton);
   installPrompt = event;
 
   installButton.style.visibility = 'visible';
